@@ -1,8 +1,6 @@
 import "./sass/index.scss";
 
 window.addEventListener("load", function () {
-  //   document.body.innerHTML s= "testing";
-
   console.clear();
 
   function CountdownTracker(label, value) {
@@ -115,8 +113,19 @@ window.addEventListener("load", function () {
   }
 
   var deadline = new Date(Date.parse(new Date()) + 9 * 24 * 60 * 60 * 1000);
+  var savedDeadline = JSON.parse(localStorage.getItem("deadline"));
+  if (savedDeadline) {
+    let prevDeadline = new Date(+savedDeadline);
+    if (new Date() <= prevDeadline) {
+      deadline = prevDeadline;
+    } else {
+      localStorage.setItem("deadline", deadline.getTime());
+    }
+  } else {
+    localStorage.setItem("deadline", deadline.getTime());
+  }
   var c = new Clock(deadline, function () {
-    alert("countdown complete");
+    console.log("countdown complete");
   });
   document.getElementById("countdown").appendChild(c.el);
 });

@@ -17,16 +17,11 @@ module.exports = {
       {
         test: /\.s[ac]ss$/i,
         use: [
-          // Creates `style` nodes from JS strings
           buildMode !== "production"
             ? "style-loader"
             : MiniCssExtractPlugin.loader,
-          // Translates CSS into CommonJS
           "css-loader",
-          //   "resolve-url-loader",
-          // Compiles Sass to CSS
           "sass-loader",
-          //   MiniCssExtractPlugin,
         ],
       },
     ],
@@ -37,8 +32,6 @@ module.exports = {
       template: "./src/index.html",
     }),
     new MiniCssExtractPlugin({
-      // Options similar to the same options in webpackOptions.output
-      // both options are optional
       filename: "../css/main.css",
     }),
   ],
