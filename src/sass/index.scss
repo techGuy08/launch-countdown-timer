@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@400;500;600;700;800;900&display=swap");
+@import "./components/_flip-clock";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-image: url("../images/pattern-hills.svg"),
+    url("../images/bg-stars.svg");
+  background-color: #1f1d2a;
+  background-position: bottom center, center;
+  background-repeat: no-repeat;
+  background-size: auto, cover;
+  color: #fff;
+  font-family: sans-serif;
+  min-height: 100vh;
+  padding-top: 100px;
+  background-attachment: fixed;
+}
+a {
+  color: #fff;
+}
+
+.attribution {
+  font-size: 14px;
+  text-align: center;
+}
+h1 {
+  text-align: center;
+  font-family: "Red Hat Text", sans-serif;
+  margin-bottom: 120px;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  font-size: 26px;
+}
+
+div#countdown {
+  margin-bottom: 120px;
+}
+nav.social-links {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+nav.social-links a {
+  text-decoration: none;
+  display: inline-block;
+  margin: 0 15px;
+}
+nav.social-links a:hover * {
+  fill: #f85c81 !important;
+}
+
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 6vw;
+    margin-bottom: 60px;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
